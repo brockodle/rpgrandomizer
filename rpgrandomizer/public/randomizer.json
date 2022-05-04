@@ -1,0 +1,223 @@
+{
+    "start": [{
+            "race": "Human",
+            "role": "Outcast",
+            "event": "Threatened",
+            "action": "Find",
+            "noun": "The town",
+            "location": "Their home",
+            "reason": "Their honor can be restored",
+            "twist": "They are insane",
+            "enemy": "The task giver"
+        },
+        {
+            "race": "Elf",
+            "role": "Religious leader",
+            "event": "Family member killed",
+            "action": "Help",
+            "noun": "Sacred object",
+            "location": "The town",
+            "reason": "For revenge!",
+            "twist": "They do not really exist",
+            "enemy": "A rival of the task giver"
+        },
+        {
+            "race": "Dwarf",
+            "role": "Spellcaster",
+            "event": "Stolen from",
+            "action": "Restore",
+            "noun": "The gods",
+            "location": "The tavern",
+            "reason": "For science!",
+            "twist": "The location is haunted",
+            "enemy": "A local politician"
+        },
+        {
+            "race": "Halfling",
+            "role": "Fighter",
+            "event": "Lost",
+            "action": "Fight",
+            "noun": "Plant",
+            "location": "The neighboring town",
+            "reason": "To restore the crops",
+            "twist": "The location does not really exist",
+            "enemy": "A gang of youths"
+        },
+        {
+            "race": "Orc",
+            "role": "Politician",
+            "event": "Taken from home",
+            "action": "Spy on",
+            "noun": "Animal",
+            "location": "The forest",
+            "reason": "Gain favor with the gods",
+            "twist": "They are possessed",
+            "enemy": "Kobolds"
+        },
+        {
+            "race": "Gnome",
+            "role": "Tavern owner",
+            "event": "Imprisoned",
+            "action": "Retrieve",
+            "noun": "Enemy",
+            "location": "A cave",
+            "reason": "Prove your worth",
+            "twist": "They betray you",
+            "enemy": "Zombies"
+        },
+        {
+            "race": "Triton",
+            "role": "Sailor",
+            "event": "Poisoned",
+            "action": "Negotiate with",
+            "noun": "The culprit",
+            "location": "A desert",
+            "reason": "Discover the missing piece",
+            "twist": "They die or go missing before you can complete the task",
+            "enemy": "Wild animals"
+        },
+        {
+            "race": "Tiefling",
+            "role": "Druid",
+            "event": "Sick",
+            "action": "Complete a ritual involving",
+            "noun": "The elders",
+            "location": "The sea",
+            "reason": "Return home",
+            "twist": "They are an imposter!",
+            "enemy": "Pirates"
+        },
+        {
+            "race": "Aasmimar",
+            "role": "Barbarian",
+            "event": "Injured",
+            "action": "Discover",
+            "noun": "Town leader",
+            "location": "A shop",
+            "reason": "Retore health",
+            "twist": "They secretly hate you",
+            "enemy": "No one"
+        },
+        {
+            "race": "Half-Elf",
+            "role": "Blacksmith",
+            "event": "Outcast",
+            "action": "Exorcise",
+            "noun": "Local thugs",
+            "location": "An abandoned home",
+            "reason": "Help the town",
+            "twist": "They are in love with one of you",
+            "enemy": "Thieves"
+        },
+        {
+            "race": "Half-Orc",
+            "role": "Entertainer",
+            "event": "Haunted",
+            "action": "Entertain",
+            "noun": "A rare resource",
+            "location": "A castle",
+            "reason": "Break the curse",
+            "twist": "They know you from before…",
+            "enemy": "Cultists"
+        },
+        {
+            "race": "Dragonborne",
+            "role": "Farmer",
+            "event": "Being tracked",
+            "action": "Infiltrate",
+            "noun": "Money",
+            "location": "The stars",
+            "reason": "For fun",
+            "twist": "They are someone of great power",
+            "enemy": "A family member of the task giver"
+        },
+        {
+            "race": "Genasi",
+            "role": "Royalty",
+            "event": "Cursed",
+            "action": "Make",
+            "noun": "An unidentified person",
+            "location": "Another world",
+            "reason": "For nature!",
+            "twist": "They are simply testing you",
+            "enemy": "A well meaning person"
+        },
+        {
+            "race": "Vedalken",
+            "role": "Adventurer",
+            "event": "Completing a ritual",
+            "action": "Contact",
+            "noun": "A crazy old man",
+            "location": "A dream",
+            "reason": "For glory!",
+            "twist": "They are transformed into an animal",
+            "enemy": "Dumb citizens"
+        },
+        {
+            "race": "Fierbolg",
+            "role": "Shop owner",
+            "event": "Studying a new phenomenon",
+            "action": "Exact revenge on",
+            "noun": "A strange language",
+            "location": "Enemy territory",
+            "reason": "To vanquish enemies",
+            "twist": "They steal something from you",
+            "enemy": "Druids"
+        },
+        {
+            "race": "Tabaxi",
+            "role": "Healer",
+            "event": "Battling a bad reputation",
+            "action": "Cast a spell on",
+            "noun": "A series of puzzles",
+            "location": "A library",
+            "reason": "A message can be delivered",
+            "twist": "They work for someone else",
+            "enemy": "Barbarians"
+        },
+        {
+            "race": "Aarakocra",
+            "role": "Fortune Teller",
+            "event": "Has lost customers",
+            "action": "Identify",
+            "noun": "A book",
+            "location": "A strange community",
+            "reason": "To even out the playing field",
+            "twist": "They run a cult",
+            "enemy": "The police"
+        },
+        {
+            "race": "Centaur",
+            "role": "Thief",
+            "event": "Bored",
+            "action": "Map",
+            "noun": "The town's crops",
+            "location": "A huge city",
+            "reason": "To gain a good reputation",
+            "twist": "They worship an evil deity",
+            "enemy": "A rich noble"
+        },
+        {
+            "race": "Fey",
+            "role": "Academic",
+            "event": "Fighting an enemy",
+            "action": "Travel to",
+            "noun": "An ale",
+            "location": "A maze",
+            "reason": "A just ruler can gain control",
+            "twist": "They have sold their soul",
+            "enemy": "An eccentric"
+        },
+        {
+            "race": "Group (mixed)",
+            "role": "Orphan",
+            "event": "In search of something",
+            "action": "Convince",
+            "noun": "A ship",
+            "location": "A temple",
+            "reason": "The town is no longer in danger",
+            "twist": "They control nature",
+            "enemy": "Just some guy"
+        }
+    ]
+}
