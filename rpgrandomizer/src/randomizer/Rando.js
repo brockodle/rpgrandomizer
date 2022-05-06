@@ -234,10 +234,11 @@ class Hello extends React.Component {
 
         return (
             React.createElement("div", {classname: "container"},
-                React.createElement("h1", null, "Getting Started")   
+                React.createElement("h1", null, "Getting Started")
         )
     }
 }
+
 */
 
 function makerolls(sect) {
