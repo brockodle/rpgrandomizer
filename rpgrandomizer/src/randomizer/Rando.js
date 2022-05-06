@@ -224,6 +224,22 @@ let rpgresults = [
     }
 ];
 
+/*
+
+THIS EXAMPLE CREATES A COMPONENT WITH A DIV AND CHILD
+
+class Hello extends React.Component {
+
+    render() {
+
+        return (
+            React.createElement("div", {classname: "container"},
+                React.createElement("h1", null, "Getting Started")   
+        )
+    }
+}
+*/
+
 function makerolls(sect) {
     const rando = Math.round(Math.random() * rpgresults.length);
     const c1 = rpgresults[rando];
