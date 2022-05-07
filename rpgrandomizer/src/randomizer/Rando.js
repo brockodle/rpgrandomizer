@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react';
+import { ReactDOM } from 'react';
+import { React } from 'react';
 import './Rando.css';
 
 let rpgresults = [
@@ -241,45 +243,56 @@ class Hello extends React.Component {
 
 */
 
-function makerolls(sect) {
-    const rando = Math.round(Math.random() * rpgresults.length);
-    const c1 = rpgresults[rando];
-    console.log(rando);
-    if (c1 === "undefined" || c1 > rpgresults.length || c1 < 0) {
-        makerolls(sect);
-    }
-    return c1[sect].toLowerCase();
-}
-
-let randout = function(){
-    this.race = makerolls("race");
-    this.role = makerolls("role");
-    this.event = makerolls("event");
-    this.action = makerolls("action");
-    this.noun = makerolls("noun");
-    this.location = makerolls("location");
-    this.reason = makerolls("reason");
-    this.twist = makerolls("twist");
-    this.enemy = makerolls("enemy");
-}
-
-let newsent = new randout();
-console.log(newsent);
-
-
-
-function Result() {
-    return <div>A/an <strong><span style={{ "color": "#ff7c80" }}>{newsent.race} {newsent.role}</span></strong> is {newsent.event}, so tasks you to {newsent.action} {newsent.noun} in {newsent.location} so that {newsent.reason} BUT {newsent.twist}!
-        <div id='enemykind'><strong>The enemy is {newsent.enemy}</strong></div>
-        <button id="rerun">Not quite my speed yet</button>
-    </div>
-}
-
 function Randomizertable() {
 
+    function makerolls(sect) {
+        const rando = Math.round(Math.random() * rpgresults.length);
+        const c1 = rpgresults[rando];
+        console.log(rando);
+        if (c1 === "undefined" || c1 > rpgresults.length || c1 < 0) {
+            makerolls(sect);
+        }
+        return c1[sect].toLowerCase();
+    }
+
+    let randout = function () {
+        this.race = makerolls("race");
+        this.role = makerolls("role");
+        this.event = makerolls("event");
+        this.action = makerolls("action");
+        this.noun = makerolls("noun");
+        this.location = makerolls("location");
+        this.reason = makerolls("reason");
+        this.twist = makerolls("twist");
+        this.enemy = makerolls("enemy");
+    }
+
+    let newsent = new randout();
+    console.log(newsent);
+
+    function resetsent() {
+        newsent = new randout();
+        console.log(newsent);
+
+        ReactDOM.render(
+            <div>A/an <strong><span style={{ "color": "#ff7c80" }}>{newsent.race} {newsent.role}</span></strong> is {newsent.event}, so tasks you to {newsent.action} {newsent.noun} in {newsent.location} so that {newsent.reason} BUT {newsent.twist}!
+            </div>,
+            document.getElementById("sentence")
+        )
+    }
+
+    const [newrun] = useState(0);
     return (
-        <div id='questoutline' className='newrow'>
-            <Result />
+        <div>
+            <div id="sentence">
+                <div>A/an <strong><span style={{ "color": "#ff7c80" }}>{newsent.race} {newsent.role}</span></strong> is {newsent.event}, so tasks you to {newsent.action} {newsent.noun} in {newsent.location} so that {newsent.reason} BUT {newsent.twist}!
+                </div>
+            </div>
+
+            <div id='enemykind'>
+                <strong>The enemy is {newsent.enemy}</strong>
+            </div>
+            <button id="rerun" onClick={resetsent}>Not quite my speed yet</button>
         </div>
     )
 }
