@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react';
-import { ReactDOM } from 'react';
-import { React } from 'react';
 import './Rando.css';
+import React from 'react';
+import ReactDOM, { findDOMNode } from 'react-dom';
+import { render } from '@testing-library/react';
 
 let rpgresults = [
     {
@@ -248,10 +248,10 @@ function Randomizertable() {
     function makerolls(sect) {
         const rando = Math.round(Math.random() * rpgresults.length);
         const c1 = rpgresults[rando];
-        console.log(rando);
         if (c1 === "undefined" || c1 > rpgresults.length || c1 < 0) {
             makerolls(sect);
         }
+        console.log(c1[sect])
         return c1[sect].toLowerCase();
     }
 
@@ -268,31 +268,36 @@ function Randomizertable() {
     }
 
     let newsent = new randout();
-    console.log(newsent);
+    const divn = document.createElement('div');
 
-    function resetsent() {
-        newsent = new randout();
-        console.log(newsent);
+    function Sentence() {
 
-        ReactDOM.render(
-            <div>A/an <strong><span style={{ "color": "#ff7c80" }}>{newsent.race} {newsent.role}</span></strong> is {newsent.event}, so tasks you to {newsent.action} {newsent.noun} in {newsent.location} so that {newsent.reason} BUT {newsent.twist}!
-            </div>,
-            document.getElementById("sentence")
+        return (
+            <div id="randomizer">
+                <div>A/an <strong><span style={{ "color": "#ff7c80" }}>{newsent.race} {newsent.role}</span></strong> is {newsent.event}, so tasks you to {newsent.action} {newsent.noun} in {newsent.location} so that {newsent.reason} BUT {newsent.twist}!
+                </div>
+                <div id='enemykind'>
+                    <strong>The enemy is {newsent.enemy}</strong>
+                </div>
+            </div>
         )
     }
 
-    const [newrun] = useState(0);
-    return (
-        <div>
-            <div id="sentence">
-                <div>A/an <strong><span style={{ "color": "#ff7c80" }}>{newsent.race} {newsent.role}</span></strong> is {newsent.event}, so tasks you to {newsent.action} {newsent.noun} in {newsent.location} so that {newsent.reason} BUT {newsent.twist}!
-                </div>
-            </div>
+    function reset() {
+        const news = new randout();
 
-            <div id='enemykind'>
-                <strong>The enemy is {newsent.enemy}</strong>
+            return ReactDOM.createPortal(
+                <div><div>A/an <strong><span style={{ "color": "#ff7c80" }}>{news.race} {news.role}</span></strong> is {news.event}, so tasks you to {news.action} {news.noun} in {news.location} so that {news.reason} BUT {news.twist}!</div><div id='enemykind'><strong>The enemy is {news.enemy}</strong></div></div>,
+                divn
+            )
+    }
+
+    return (
+        <div id="randomizer">
+            <div id="sentence">
+                <Sentence />
             </div>
-            <button id="rerun" onClick={resetsent}>Not quite my speed yet</button>
+            <button id="rerun" onClick={reset}>Again!</button>
         </div>
     )
 }
