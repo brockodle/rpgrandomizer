@@ -269,27 +269,27 @@ function Randomizertable() {
 
     let [s, stchg] = useState();
 
+    let newsent = '';
+
     const chgsent = () => {
-        const newsent = new randout;
+        newsent = new randout();
         return (
-            <div id='sentence'>
-                <div>A/an <strong><span style={{ "color": "#ff7c80" }}>{newsent.race} {newsent.role}</span></strong> is {newsent.event}, so tasks you to {newsent.action} {newsent.noun} in {newsent.location} so that {newsent.reason} BUT {newsent.twist}!
-                </div>
-                <div id='enemykind'>
-                    <strong>The enemy is {newsent.enemy}</strong>
-                </div>
-            </div>
+            newsent
         )
     };
 
     function Sentence(props) {
-        const newsent = new randout;
+        newsent = new randout();
+        console.log(newsent);
         return (
             <div id='sentence'>
-                <div>A/an <strong><span style={{ "color": "#ff7c80" }}>{newsent.race} {newsent.role}</span></strong> is {newsent.event}, so tasks you to {newsent.action} {newsent.noun} in {newsent.location} so that {newsent.reason} BUT {newsent.twist}!
-                </div>
+                A/an <strong><span style={{ "color": "#ff7c80" }}>{newsent.race} {newsent.role}</span></strong> is <strong><span style={{ "color": "#ffcc66" }}>{newsent.event}</span></strong>,<br/>
+                so tasks you to <strong><span style={{ "color": "#cfb284" }}>{newsent.action} {newsent.noun}</span></strong> in <strong><span style={{ "color": "#00b050" }}>{newsent.location}</span></strong>
+                <br/>
+                so that <strong><span style={{ "color": "#00b0f0" }}>{newsent.reason}</span></strong><br/>
+                BUT <strong><span style={{ "color": "#9966ff" }}>{newsent.twist}</span></strong>!
                 <div id='enemykind'>
-                    <strong>The enemy is {newsent.enemy}</strong>
+                    <strong>The enemy is <span style={{ "color": "#ff99ff" }}>{newsent.enemy}</span></strong>
                 </div>
             </div>
         )
@@ -298,7 +298,7 @@ function Randomizertable() {
     function Button(props) {
         return (
             <button id="rerun" onClick={() => stchg(props.changeSentence)}>
-                Again!
+                Summon Another!
             </button>
         )
     }
@@ -306,10 +306,8 @@ function Randomizertable() {
     return (
 
         <div id="randomizer">
-            <React.Fragment>
-                <Sentence newBody={s}/>
+                <Sentence newBody={s} />
                 <Button changeSentence={chgsent} />
-            </React.Fragment>
         </div>
     )
 }
