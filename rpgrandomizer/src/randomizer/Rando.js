@@ -274,7 +274,7 @@ function Randomizertable() {
         newsent = new randout();
         console.log(newsent);
 
-        ReactDOM.render(
+        return (
             <div>A/an <strong><span style={{ "color": "#ff7c80" }}>{newsent.race} {newsent.role}</span></strong> is {newsent.event}, so tasks you to {newsent.action} {newsent.noun} in {newsent.location} so that {newsent.reason} BUT {newsent.twist}!
             </div>,
             document.getElementById("sentence")
