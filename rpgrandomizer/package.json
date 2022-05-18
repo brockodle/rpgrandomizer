@@ -2,15 +2,15 @@
   "name": "rpgrandomizer",
   "version": "0.1.0",
   "private": true,
-  "homepage": "/rpgrandomizer",
+  "homepage": "",
   "dependencies": {
-    "@testing-library/jest-dom": "@latest",
-    "@testing-library/react": "@latest",
-    "@testing-library/user-event": "@latest",
+    "@testing-library/jest-dom": "latest",
+    "@testing-library/react": "latest",
+    "@testing-library/user-event": "latest",
     "jquery": "https://github.com/jquery/jquery",
-    "react": "@latest",
-    "react-dom": "@latest",
-    "react-scripts": "@latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-scripts": "latest",
     "web-vitals": "^2.1.0"
   },
   "scripts": {
