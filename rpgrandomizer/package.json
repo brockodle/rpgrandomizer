@@ -2,7 +2,7 @@
   "name": "rpgrandomizer",
   "version": "0.1.0",
   "private": true,
-  "homepage": "/rpgrandomizer",
+  "homepage": "",
   "dependencies": {
     "@testing-library/jest-dom": "latest",
     "@testing-library/react": "latest",
