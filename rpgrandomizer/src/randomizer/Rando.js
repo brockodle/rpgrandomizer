@@ -1,7 +1,5 @@
 import './Rando.css';
 import React, { useState } from 'react';
-import ReactDOM, { findDOMNode } from 'react-dom';
-import { render } from '@testing-library/react';
 
 function Randomizertable() {
 
