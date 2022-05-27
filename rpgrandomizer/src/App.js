@@ -1,12 +1,13 @@
-import logo from './logo.svg';
+import { render } from '@testing-library/react';
+import React from 'react';
 import './App.css';
-import Randomizertable from './randomizer/Rando';
-import { useState } from 'react';
+import { Randomizertable, Clock } from './randomizer/Rando';
 
 function App() {
   return (
     <div className="App">
-      <Randomizertable/>
+      <Randomizertable />
+      <Clock/>
     </div>
   );
 };

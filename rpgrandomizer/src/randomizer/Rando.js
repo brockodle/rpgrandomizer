@@ -1,12 +1,13 @@
 import './Rando.css';
 import React, { useState } from 'react';
+import { render } from '@testing-library/react';
 
 function Randomizertable() {
 
     let rpgresults = [
         {
             race: "Human",
-            role: "Outcast",
+            role: "Outcast(s)",
             event: "Threatened",
             action: "Find",
             noun: "The town",
@@ -17,7 +18,7 @@ function Randomizertable() {
         },
         {
             race: "Elf",
-            role: "Religious leader",
+            role: "Religious leader(s)",
             event: "grieving a lost family member",
             action: "Help",
             noun: "Sacred object",
@@ -28,7 +29,7 @@ function Randomizertable() {
         },
         {
             race: "Dwarf",
-            role: "Spellcaster",
+            role: "Spellcaster(s)",
             event: "stolen from",
             action: "Restore",
             noun: "The gods",
@@ -39,7 +40,7 @@ function Randomizertable() {
         },
         {
             race: "Halfling",
-            role: "Fighter",
+            role: "Fighter(s)",
             event: "Lost",
             action: "Fight",
             noun: "a plant",
@@ -50,7 +51,7 @@ function Randomizertable() {
         },
         {
             race: "Orc",
-            role: "Politician",
+            role: "Politician(s)",
             event: "Taken from home",
             action: "Spy on",
             noun: "an animal",
@@ -61,7 +62,7 @@ function Randomizertable() {
         },
         {
             race: "Gnome",
-            role: "Tavern owner",
+            role: "Tavern owner(s)",
             event: "Imprisoned",
             action: "Retrieve",
             noun: "an enemy",
@@ -72,7 +73,7 @@ function Randomizertable() {
         },
         {
             race: "Triton",
-            role: "Sailor",
+            role: "Sailor(s)",
             event: "Poisoned",
             action: "Negotiate with",
             noun: "the culprit",
@@ -83,7 +84,7 @@ function Randomizertable() {
         },
         {
             race: "Tiefling",
-            role: "Druid",
+            role: "Druid(s)",
             event: "Sick",
             action: "Complete a ritual involving",
             noun: "elders",
@@ -94,7 +95,7 @@ function Randomizertable() {
         },
         {
             race: "Aasmimar",
-            role: "Barbarian",
+            role: "Barbarian(s)",
             event: "Injured",
             action: "Discover",
             noun: "a Town leader",
@@ -105,7 +106,7 @@ function Randomizertable() {
         },
         {
             race: "Half-Elf",
-            role: "Blacksmith",
+            role: "Blacksmith(s)",
             event: "Outcast",
             action: "Exorcise",
             noun: "some Local thugs",
@@ -116,7 +117,7 @@ function Randomizertable() {
         },
         {
             race: "Half-Orc",
-            role: "Entertainer",
+            role: "Entertainer(s)",
             event: "Haunted",
             action: "Entertain",
             noun: "a rare resource",
@@ -127,7 +128,7 @@ function Randomizertable() {
         },
         {
             race: "Dragonborne",
-            role: "Farmer",
+            role: "Farmer(s)",
             event: "Being tracked",
             action: "Infiltrate",
             noun: "money",
@@ -138,7 +139,7 @@ function Randomizertable() {
         },
         {
             race: "Genasi",
-            role: "Royalty",
+            role: "Royalty(ies)",
             event: "Cursed",
             action: "create",
             noun: "an unidentified person",
@@ -149,7 +150,7 @@ function Randomizertable() {
         },
         {
             race: "Vedalken",
-            role: "Adventurer",
+            role: "Adventurer(ies)",
             event: "Completing a ritual",
             action: "Contact",
             noun: "a crazy old man",
@@ -160,7 +161,7 @@ function Randomizertable() {
         },
         {
             race: "Fierbolg",
-            role: "Shop owner",
+            role: "Shop owner(s)",
             event: "Studying a new phenomenon",
             action: "Exact revenge on",
             noun: "A strange language",
@@ -171,7 +172,7 @@ function Randomizertable() {
         },
         {
             race: "Tabaxi",
-            role: "Healer",
+            role: "Healer(s)",
             event: "Battling a bad reputation",
             action: "Cast a spell on",
             noun: "A series of puzzles",
@@ -182,7 +183,7 @@ function Randomizertable() {
         },
         {
             race: "Aarakocra",
-            role: "Fortune Teller",
+            role: "Fortune Teller(s)",
             event: "dealing with lost customers",
             action: "Identify",
             noun: "A book",
@@ -193,7 +194,7 @@ function Randomizertable() {
         },
         {
             race: "Centaur",
-            role: "Thief",
+            role: "Thief(ves)",
             event: "Bored",
             action: "Map",
             noun: "The town's crops",
@@ -204,7 +205,7 @@ function Randomizertable() {
         },
         {
             race: "Fey",
-            role: "Academic",
+            role: "Academic(s)",
             event: "Fighting an enemy",
             action: "Travel to",
             noun: "An ale",
@@ -215,7 +216,7 @@ function Randomizertable() {
         },
         {
             race: "mixed group of",
-            role: "Orphan",
+            role: "Orphan(s)",
             event: "In search of something",
             action: "Convince",
             noun: "A ship",
@@ -236,7 +237,17 @@ function Randomizertable() {
     
             return (
                 React.createElement("div", {classname: "container"},
-                    React.createElement("h1", null, "Getting Started")
+                    React.createElement(
+                        "h1", null, "Getting Started"
+                    ),
+                    React.createElement(
+                        "input", 
+                        null
+                    ),
+                    React.createElement(
+                        "pre",null,
+                        (new Date).toLocaleTimeString())
+                    )
             )
         }
     }
@@ -281,10 +292,10 @@ function Randomizertable() {
         console.log(newsent);
         return (
             <div id='sentence'>
-                A/an <strong><span style={{ "color": "#ff7c80" }}>{newsent.race} {newsent.role}</span></strong> is <strong><span style={{ "color": "#ffcc66" }}>{newsent.event}</span></strong>,<br/>
+                A/an <strong><span style={{ "color": "#ff7c80" }}>{newsent.race} {newsent.role}</span></strong> is <strong><span style={{ "color": "#ffcc66" }}>{newsent.event}</span></strong>,<br />
                 so tasks you to <strong><span style={{ "color": "#cfb284" }}>{newsent.action} {newsent.noun}</span></strong> in <strong><span style={{ "color": "#00b050" }}>{newsent.location}</span></strong>
-                <br/>
-                so that <strong><span style={{ "color": "#00b0f0" }}>{newsent.reason}</span></strong><br/>
+                <br />
+                so that <strong><span style={{ "color": "#00b0f0" }}>{newsent.reason}</span></strong><br />
                 BUT <strong><span style={{ "color": "#9966ff" }}>{newsent.twist}</span></strong>!
                 <div id='enemykind'>
                     <strong>The enemy is <span style={{ "color": "#ff99ff" }}>{newsent.enemy}</span></strong>
@@ -302,12 +313,29 @@ function Randomizertable() {
     }
 
     return (
-
         <div id="randomizer">
-                <Sentence newBody={s} />
-                <Button changeSentence={chgsent} />
+            <Sentence newBody={s} />
+            <Button changeSentence={chgsent} />
         </div>
     )
 }
 
-export default Randomizertable;
+function Clock(props) {
+
+    let time = (new Date).toLocaleTimeString();
+    const maketimer = () => {
+        return (
+            time = (new Date).toLocaleTimeString()
+        )
+    }
+
+    return (
+        <pre>
+            {setInterval(maketimer, 1000)}
+        </pre>
+    )
+}
+
+
+
+export { Randomizertable, Clock }
