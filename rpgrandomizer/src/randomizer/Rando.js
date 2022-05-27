@@ -1,5 +1,5 @@
 import './Rando.css';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { render } from '@testing-library/react';
 
 function Randomizertable() {
@@ -320,22 +320,18 @@ function Randomizertable() {
     )
 }
 
-function Clock(props) {
+function Clock() {
 
-    let time = (new Date).toLocaleTimeString();
-    const maketimer = () => {
-        return (
-            time = (new Date).toLocaleTimeString()
-        )
-    }
+    const [time, setTime] = useState(new Date());
 
-    return (
-        <pre>
-            {setInterval(maketimer, 1000)}
-        </pre>
-    )
+    useEffect(() => {
+      setInterval(() => {
+       setTime(new Date());
+      }, 1000);
+    }, []);
+  
+   return <pre>{time.toLocaleTimeString()}</pre>
+
 }
-
-
 
 export { Randomizertable, Clock }
